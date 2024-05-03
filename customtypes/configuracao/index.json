@@ -1,0 +1,24 @@
+{
+  "format": "custom",
+  "id": "configuracao",
+  "label": "Configuração",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Título do site",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
