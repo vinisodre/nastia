@@ -19,13 +19,18 @@ const ImageGalery = ({ slice }: ImageGaleryProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="mx-auto flex flex-col items-center max-w-[1440px] p-4"
     >
-      <div>
-        <h2>{slice.primary.title}</h2>
-        <div className="relative h-60">
-          {/* <PrismicNextImage field={item.image} fill className="object-cover" /> */}
+      
+        <h2 className="text-3xl mb-10">{slice.primary.title}</h2>
+        <div className="flex h-auto gap-8 flex-wrap justify-center">
+          {slice.items.map((item, index) => (
+            <div key={index} className="relative h-80 w-80">
+              <PrismicNextImage key={index} field={item.image} fill className=" object-center object-cover" />
+            </div>
+          ))}
         </div>
-      </div>
+      
     </section>
   );
 };
