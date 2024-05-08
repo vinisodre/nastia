@@ -1,4 +1,5 @@
 import { Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**
@@ -15,7 +16,9 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for banner (variation: {slice.variation}) Slices
+      <div className="relative h-60">
+        <PrismicNextImage field={slice.primary.image} fill className="object-cover" />
+      </div>
     </section>
   );
 };
