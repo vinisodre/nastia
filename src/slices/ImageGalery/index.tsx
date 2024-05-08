@@ -19,10 +19,10 @@ const ImageGalery = ({ slice }: ImageGaleryProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mx-auto flex flex-col items-center max-w-[1440px] p-4"
+      className="mx-auto flex flex-col items-center my-24 max-w-[1440px] p-4 md:p-0"
     >
       
-        <h2 className="text-3xl mb-10">{slice.primary.title}</h2>
+        <h2 className="title">{slice.primary.title}</h2>
         <div className="flex h-auto gap-8 flex-wrap justify-center">
           {slice.items.map((item, index) => (
             <div key={index} className="relative h-80 w-80">

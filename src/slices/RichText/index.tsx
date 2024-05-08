@@ -7,16 +7,30 @@ import {
 } from "@prismicio/react";
 import styles from "./index.module.css";
 
+const linkResolver = (doc) => "/" + doc.uid;
+
 const components: JSXMapSerializer = {
-  hyperlink: ({ node, children }) => {
-    return <PrismicNextLink field={node.data}>{children}</PrismicNextLink>;
-  },
-  label: ({ node, children }) => {
-    if (node.data.label === "codespan") {
-      return <code>{children}</code>;
-    }
-  },
-};
+  heading1: ({ children }) => (
+  <h1 className="text-5xl font-bold leading-10">
+  {children}
+  </h1>),
+  heading2: ({ children }) => (
+    <h2 className="text-3xl font-bold leading-10">
+    {children}
+    </h2>),
+  heading3: ({ children }) => (
+    <h3 className="text-2xl font-bold leading-10">
+    {children}
+    </h3>),
+  
+  paragraph: ({ children }) => (
+  <p className="text-2x1 text-center font-normal leading-10 font-body
+  ☐ text-slate-600 mb-4 md: mb-8 max-w-md">
+  {children}
+  </p>)
+
+  
+  }
 
 /**
  * Props for `RichText`.
@@ -28,7 +42,11 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
  */
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
-    <section className={styles.richtext}>
+    <section
+    data-slice-type={slice.slice_type}
+    data-slice-variation={slice.variation}
+    className="bg-pink-200"
+  >
       <PrismicRichText field={slice.primary.content} components={components} />
     </section>
   );

@@ -15,11 +15,11 @@ const ImageAndText = ({ slice }: ImageAndTextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col px-6 lg:flex-row mx-auto max-w-[1440px]"
+      className="flex flex-col px-6 lg:flex-row mx-auto my-24 max-w-[1440px]"
     >
     <div className="flex-1">
-     <h2>{slice.primary.title}</h2>
-     <div>
+     <h2 className="title">{slice.primary.title}</h2>
+     <div className="pr-10">
       <PrismicRichText field={slice.primary.text} />
      </div>
     </div>

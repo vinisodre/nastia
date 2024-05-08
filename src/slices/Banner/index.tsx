@@ -16,7 +16,7 @@ const Banner = ({ slice }: BannerProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="relative h-60">
+      <div className="relative h-80">
         <PrismicNextImage field={slice.primary.image} fill className="object-cover" />
       </div>
     </section>
